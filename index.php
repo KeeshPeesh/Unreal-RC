@@ -30,6 +30,11 @@ if (empty($popularPicks)) {
     <title>Unreal RC</title>
     <link rel="stylesheet" href="indexstyle.css">
     <favicon href="resources/favicon.ico" type="image/x-icon">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BJ+Cree:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="top-header">
