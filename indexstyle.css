@@ -6,8 +6,6 @@
     --black: #111216;
 }
 
-
-
 * {
     margin: 0;
     padding: 0;
@@ -23,11 +21,10 @@ body {
 .top-header {
     display: flex;
     width: 100%;
-    height: 235px;
+    height: 100px;
 }
 
 .logo-box {
-    width: 390px;
     background-color: var(--black);
     display: flex;
     justify-content: center;
@@ -63,26 +60,10 @@ body {
     opacity: 0.8;
 }
 
-/* Main Content */
 .main-content {
     padding: 25px 0 60px;
 }
 
-.section-title {
-    width: 69%;
-    margin: 0 auto 25px;
-    background-color: var(--red);
-    text-align: center;
-    padding: 14px 10px;
-}
-
-.section-title h2 {
-    color: black;
-    font-size: 24px;
-    font-weight: 400;
-}
-
-/* Cards */
 .cards {
     width: 69%;
     margin: 0 auto;
@@ -124,6 +105,68 @@ body {
     color: white;
     font-size: 40px;
     font-weight: 400;
+}
+
+.card-info {
+    width: 100%;
+    background-color: var(--red);
+    padding: 15px;
+    text-align: center;
+}
+
+.card-info h3 {
+    color: white;
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.card-info p {
+    color: #f1f1f1;
+    font-size: 16px;
+}
+
+.section-title {
+    width: 69%;
+    margin: 0 auto 25px;
+    background-color: var(--red);
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#searchBar {
+    width: 100%;
+    height: 50px;
+    padding: 0 15px;
+    border-radius: 6px;
+    border: 2px solid rgba(0,0,0,0.2);
+    background-color: var(--red);
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+/* Search Icon */
+#searchBar {
+    padding-left: 40px;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/622/622669.png');
+    background-size: 18px;
+    background-repeat: no-repeat;
+    background-position: 12px center;
+}
+
+/* Placeholder */
+#searchBar::placeholder {
+    color: #424141;
+}
+
+/* Focus effect */
+#searchBar:focus {
+    border-color: black;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
 }
 
 /* Responsive */

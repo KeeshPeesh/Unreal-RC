@@ -1,24 +1,35 @@
 <?php
 $navItems = ["Cars", "Boats", "Airplanes", "Repair Service"];
 
-$popularPicks = [
-    [
-        "title" => "Name / Price",
-        "image" => ""
-    ],
-    [
-        "title" => "Name / Price",
-        "image" => ""
-    ]
-];
+// Load popular picks from JSON file
+$popularPicks = [];
+
+$jsonFile = 'popular_picks.json';
+
+if (file_exists($jsonFile)) {
+    $jsonData = file_get_contents($jsonFile);
+    $popularPicks = json_decode($jsonData, true);
+}
+
+// fallback if empty
+if (empty($popularPicks)) {
+    $popularPicks = [
+        [
+            "title" => "Name / Price",
+            "image" => "",
+            "description" => "Short description goes here."
+        ]
+    ];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blueprint Layout</title>
+    <title>Unreal RC</title>
     <link rel="stylesheet" href="indexstyle.css">
+    <favicon href="resources/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <header class="top-header">
@@ -35,19 +46,22 @@ $popularPicks = [
 
     <main class="main-content">
         <section class="section-title">
-            <h2>Popular Picks</h2>
+            <input type="text" id="searchBar" placeholder="Search Popular Picks...">
         </section>
 
         <section class="cards">
             <?php foreach ($popularPicks as $pick): ?>
-                <div class="card">
+                <div class="card" 
+     data-title="<?= strtolower(htmlspecialchars($pick["title"])) ?>" 
+     data-description="<?= strtolower(htmlspecialchars($pick["description"] ?? "")) ?>">
                     <div class="card-image">
                         <?php if (!empty($pick["image"])): ?>
                             <img src="<?= htmlspecialchars($pick["image"]) ?>" alt="<?= htmlspecialchars($pick["title"]) ?>">
                         <?php endif; ?>
                     </div>
                     <div class="card-info">
-                        <p><?= htmlspecialchars($pick["title"]) ?></p>
+                        <h3><?= htmlspecialchars($pick["title"]) ?></h3>
+                        <p><?= htmlspecialchars($pick["description"] ?? "") ?></p>
                     </div>
                 </div>
             <?php endforeach; ?>

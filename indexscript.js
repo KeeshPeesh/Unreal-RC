@@ -8,3 +8,23 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const searchBar = document.getElementById("searchBar");
+    const cards = document.querySelectorAll(".card");
+
+    searchBar.addEventListener("input", () => {
+        const searchTerm = searchBar.value.toLowerCase();
+
+        cards.forEach(card => {
+            const title = card.dataset.title;
+            const description = card.dataset.description;
+
+            if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    });
+});

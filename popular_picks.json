@@ -1,0 +1,27 @@
+[
+    {
+        "title": "RC Car - $120",
+        "image": "resources/car.jpg",
+        "description": "High-speed RC car with durable suspension and long battery life."
+    },
+    {
+        "title": "RC Boat - $200",
+        "image": "resources/boat.jpg",
+        "description": "Water-resistant RC boat built for speed and stability on lakes."
+    },
+    {
+        "title": "RC Plane - $300",
+        "image": "resources/plane.jpg",
+        "description": "High-performance RC plane with excellent maneuverability and flight stability."
+    },
+    {
+        "title": "RC Drone - $250",
+        "image": "resources/drone.jpg",
+        "description": "Advanced RC drone with HD camera and long flight time for aerial photography."
+    },
+    {
+        "title": "RC Truck - $150",
+        "image": "resources/truck.jpg",
+        "description": "Rugged RC truck designed for off-road adventures with powerful motors."
+    }
+]
